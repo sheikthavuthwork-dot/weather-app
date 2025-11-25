@@ -1,38 +1,380 @@
-.App {
+
+
+
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+   background-image: url(https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?cs=srgb&dl=pexels-jplenio-1118873.jpg&fm=jpg); 
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.app {
+  width: 100%;
+  max-width: 600px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  letter-spacing: 1px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-wrapper {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.input-wrapper button {
+  background: #ffffff;
+  border: none;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.input-wrapper button:hover {
+  background: #e3e3e3;
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 16px;
+  margin-top: 10px;
+  color: #fff;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.location {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 8px;
+}
+.location svg{
+  color: rgb(243, 40, 40);
+
 }
 
-.App-link {
-  color: #61dafb;
+.location h2 span {
+  opacity: 0.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.datetext {
+  margin: 10px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.weatherdesc {
+  margin: 15px 0;
+}
+
+.weatherdesc img {
+  width: 100px;
+}
+
+.tempstats h1 {
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+.windstats {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* .forecast-section {
+  margin-top: 30px;
+}
+
+.forecast-section h2 {
+  margin-bottom: 15px;
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.forecast-card img {
+  width: 60px;
+}
+
+.forecast-card h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.forecast-card p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.forecast-card span {
+  font-size: 12px;
+  opacity: 0.8;
+} */
+
+/* .history-box {
+  width: 100%;
+  max-width: 350px;
+  background: #ffffff10;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px auto;
+  backdrop-filter: blur(5px);
+}
+
+.history-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-box li {
+  background: #ffffff20;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.history-box li:hover {
+  background: #ffffff40;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.history-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.history-item h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.history-item p {
+  margin: 2px 0 0 0;
+  color: #ddd;
+  font-size: 13px;
+} */
+
+
+
+
+@media (max-width: 768px) {
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+
+  .tempstats h1 {
+    font-size: 40px;
   }
 }
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+  }
+
+  .input-wrapper button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .forecast-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tempstats h1 {
+    font-size: 34px;
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------- Forecast Section ------- */
+.forecast-section {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.forecast-section h2 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Single horizontal row */
+.forecast-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.forecast-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Compact card */
+.forecast-card {
+  min-width: 90px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+}
+
+/* Smaller icon */
+.forecast-card img {
+  width: 40px;
+  margin: 6px 0;
+}
+
+.forecast-card h4 {
+  font-size: 12px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.forecast-card p {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 2px 0;
+}
+
+.forecast-card span {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+
+/* ------- History Box (Vertical Card List) ------- */
+.history-box {
+  width: 100%;
+  max-width: 350px;
+  background: #ffffff10;
+  padding: 18px;
+  border-radius: 12px;
+  margin: 20px auto;
+  backdrop-filter: blur(6px);
+}
+
+.history-box h3 {
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+/* Card list stacked vertically */
+.history-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Card style: Similar to forecast-card */
+.history-box li {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.history-box li:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Flex layout: icon + text */
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Weather icon */
+.history-item img {
+  width: 55px;
+  height: 55px;
+}
+
+/* City name */
+.history-item h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Description + temperature */
+.history-item p {
+  margin: 4px 0 0 0;
+  color: #ddd;
+  font-size: 13px;
+}
+
